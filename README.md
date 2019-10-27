@@ -34,4 +34,5 @@ foo@bar:~$ streamlit run app.py
 
 The web app should look something like this:
 
-![Sample image of the sales forecasting model web application.](sales_forecast_webapp_image.png)
+![Sample image of the sales forecasting model web application.](sales_forecast_webapp_image.png) 
+
