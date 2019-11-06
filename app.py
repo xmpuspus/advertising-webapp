@@ -22,10 +22,39 @@ data = pd.read_csv('advertising_regression.csv')
 data
 
 # Let's Draw A Histogram
+
+### TV
 st.subheader('TV Ad Cost Distribution')
 
 # Use numpy to generate bins for age
 hist_values = np.histogram(data.TV, bins=300, range=(0,300))[0]
+
+# Show Bar Chart
+st.bar_chart(hist_values)
+
+### Newspaper
+st.subheader('Newspaper Ad Cost Distribution')
+
+# Use numpy to generate bins for age
+hist_values = np.histogram(data.newspaper, bins=300, range=(0,300))[0]
+
+# Show Bar Chart
+st.bar_chart(hist_values)
+
+### Radio
+st.subheader('Radio Ad Cost Distribution')
+
+# Use numpy to generate bins for age
+hist_values = np.histogram(data.radio, bins=300, range=(0,300))[0]
+
+# Show Bar Chart
+st.bar_chart(hist_values)
+
+### Sales
+st.subheader('Historical Sales Distribution')
+
+# Use numpy to generate bins for age
+hist_values = np.histogram(data.sales, bins=300, range=(0,300))[0]
 
 # Show Bar Chart
 st.bar_chart(hist_values)
@@ -52,5 +81,5 @@ saved_model = joblib.load('advertising_model.sav')
 predicted_sales = saved_model.predict([[TV, radio, newspaper]])[0]
 
 # Print prediction
-st.write(predicted_sales)
+st.write(f"Predicted sales is {int(predicted_sales*1000)} dollars.")
 
